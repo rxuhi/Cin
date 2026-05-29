@@ -62,7 +62,7 @@ async def on_member_join(member):
         channel = bot.get_channel(channel_id)
         if channel:
             await channel.send(
-                f"✅ **{member}** 님이 입장했어요! "
+                f"✅ {member.mention} 님이 입장했어요!"
                 f"(총 입장 횟수: {data[user_id]['join_count']}회)"
             )
 
@@ -86,7 +86,7 @@ async def on_member_remove(member):
         channel = bot.get_channel(channel_id)
         if channel:
             await channel.send(
-                f"❌ **{member}** 님이 퇴장했어요! "
+                f"❌ {member.mention} 님이 퇴장했어요!"
                 f"(총 퇴장 횟수: {data[user_id]['leave_count']}회)"
             )
 
