@@ -4,8 +4,8 @@ import json
 import os
 
 # ✅ 봇 설정
-TOKEN = "여기에_봇_토큰_입력"
-LOG_CHANNEL_ID = 123456789  # 로그 남길 채널 ID 입력
+TOKEN = os.getenv("TOKEN1")
+LOG_CHANNEL_ID = 15098019083727667501509801908372766750  # 로그 남길 채널 ID 입력
 DATA_FILE = "join_count.json"
 
 intents = discord.Intents.default()
@@ -84,7 +84,7 @@ async def check_join_leave(ctx, member: discord.Member):
     user_id = str(member.id)
 
     if user_id not in data:
-        await ctx.send(f"**{member}** 님의 기록이 없어요. (봇 추가 이후 기록부터 집계돼요)")
+        await ctx.send(f"**{member}** 님의 기록이 없어요.")
         return
 
     info = data[user_id]
